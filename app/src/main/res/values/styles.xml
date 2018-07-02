@@ -5,6 +5,12 @@
         <item name="android:background">@android:color/white</item>
     </style>
 
+    <style name="Login" parent="android:Theme.DeviceDefault.Light.NoActionBar.Fullscreen">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:background">@android:color/transparent</item>
+    </style>
+
+
     <style name="AppTheme" parent="android:Theme.DeviceDefault.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

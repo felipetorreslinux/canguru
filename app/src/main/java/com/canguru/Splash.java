@@ -2,6 +2,7 @@ package com.canguru;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.PixelFormat;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+
+import com.canguru.Views.View_Login;
 
 public class Splash extends Activity {
 
@@ -28,6 +31,8 @@ public class Splash extends Activity {
         progress_bar_splash = (ProgressBar) findViewById(R.id.progress_bar_splash);
         animation_progress_bar(progress_bar_splash);
 
+        open_login ();
+
     }
 
     private void animation_progress_bar (ProgressBar progressBar){
@@ -37,6 +42,16 @@ public class Splash extends Activity {
         animation.setFillEnabled(true);
         progressBar.setAnimation(animation);
         animation.start();
+    }
+
+    private void open_login (){
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                startActivity(new Intent(Splash.this, View_Login.class));
+                finish();
+            }
+        }, 1500);
     }
 
 }
